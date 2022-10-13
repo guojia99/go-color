@@ -4,15 +4,8 @@ type YIQ struct {
 	Y, I, Q float64
 }
 
-func (c YIQ) YUV() YUV {
-	//TODO implement me
-	panic("implement me")
-}
-
-func (c YIQ) RGBA() (r, g, b, a uint32) {
-	//TODO implement me
-	panic("implement me")
-}
+func (c YIQ) RGBA() (r, g, b, a uint32) { return c.RGB().RGBA() }
+func (c YIQ) YUV() YUV                  { return YUV{} }
 
 func (c YIQ) RGB() RGB {
 	return RGB{
